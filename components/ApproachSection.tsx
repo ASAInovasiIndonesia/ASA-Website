@@ -6,7 +6,7 @@ const ApproachSection = () => {
     <div className="bg-black text-white relative">
       <Image
         src="/static/super_graphic3.png"
-        className="absolute top-0 right-0"
+        className="absolute top-0 right-0 hidden md:block"
         width={284}
         height={320}
         unoptimized
@@ -20,7 +20,7 @@ const ApproachSection = () => {
         unoptimized
         alt="super graphic"
       />
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 gap-6 py-12">
+      <div className="relative z-10 max-w-7xl px-6 xl:px-4 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 py-24">
         <div>
           <h2 className="uppercase text-[60px] font-semibold leading-[78px]">
             Innovative Approach for Lasting Impact
@@ -31,15 +31,15 @@ const ApproachSection = () => {
             commitment to lasting impact.
           </p>
         </div>
-        <div className="grid grid-cols-2 grid-rows-2 border-white pt-48">
-          <div className="p-6 border-r border-b">
+        <div className="ml-12 grid grid-cols-1 -mr-6 sm:mr-0 sm:grid-cols-2 grid-rows-2 border-white md:pt-48">
+          <div className="pr-6 py-4 sm:p-6 sm:border-r border-b">
             <h5 className="font-semibold text-3xl">Discover</h5>
             <p className="mt-4 font-light">
               We deeply understand your audience by immersing ourselves in their
               experiences, needs, and challenges.
             </p>
           </div>
-          <div className="p-6 border-b">
+          <div className="pr-6 py-4 sm:p-6 border-b">
             <h5 className="font-semibold text-3xl">Envision</h5>
             <p className="mt-4 font-light">
               Turns insights from empathy into innovative ideas. Exploring new
@@ -47,7 +47,7 @@ const ApproachSection = () => {
               solutions
             </p>
           </div>
-          <div className="p-6 border-r">
+          <div className="pr-6 py-4 sm:p-6 sm:border-r">
             <h5 className="font-semibold text-3xl">Implement & Iterate</h5>
             <p className="mt-4 font-light">
               We believe in constant improvement. We ensure that our ideas

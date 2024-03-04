@@ -4,7 +4,7 @@ import CardInsight from "./CardInsight";
 const InsightSection = () => {
   return (
     <div className="py-24 bg-[url('/static/stock_image4.png')] bg-cover bg-top bg-no-repeat">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-6 xl:px-4">
         <div className="mx-auto w-fit">
           <h4 className="text-4xl font-light">Read Our Insights</h4>
           <p className="pl-6 font-grotesque text-2xl border-l border-black mt-8">
@@ -12,7 +12,7 @@ const InsightSection = () => {
             Experience Excellence
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-3 gap-6">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <CardInsight
             image="/static/article1.png"
             title="Visual Element Design"

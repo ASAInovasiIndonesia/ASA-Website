@@ -22,7 +22,7 @@ const CardInsight = ({
         src={image}
         width={421}
         height={300}
-        className="aspect-[421/300]"
+        className="aspect-[421/300] w-full"
         alt="article"
       />
       <CardBody className="bg-black text-white px-6 py-8">

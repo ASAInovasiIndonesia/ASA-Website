@@ -16,9 +16,18 @@ const config: Config = {
       colors: {
         orange: "#FF834F",
       },
+      keyframes: {
+        in: {
+          "0%": { transform: "translateY(18px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+      },
+      animation: {
+        in: "in .6s both",
+      },
     },
   },
   darkMode: "class",
-  plugins: [nextui(), require("tailwindcss-animate")],
+  plugins: [nextui()],
 };
 export default config;

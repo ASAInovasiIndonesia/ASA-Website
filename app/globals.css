@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .text-hero {
-  font-size: clamp(40px, 5vw, 100px);
+  font-size: clamp(70px, 6vw, 100px);
 }
 
 .linear-foreground {
@@ -13,4 +13,12 @@
     rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0.2)
   );
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.animate-in {
+  animation-delay: calc(var(--index) * 130ms);
 }

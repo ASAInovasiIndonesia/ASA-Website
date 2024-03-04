@@ -3,8 +3,8 @@ import React from "react";
 
 const OurClients = () => {
   return (
-    <div className="max-w-5xl mx-auto py-12">
-      <div className="grid grid-cols-2">
+    <div className="max-w-5xl mx-auto py-24 px-6 xl:px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <h2 className="uppercase text-4xl font-semibold">
           Our Valued <br /> Clients
         </h2>
@@ -14,7 +14,7 @@ const OurClients = () => {
           experiences.
         </p>
       </div>
-      <div className="grid grid-cols-3 mt-16 grayscale">
+      <div className="grid grid-cols-2 md:grid-cols-3 mt-16 grayscale">
         <div className="flex justify-center items-center border">
           <Image src="/static/btpn.png" width={120} height={80} alt="clients" />
         </div>
@@ -47,7 +47,7 @@ const OurClients = () => {
         </div>
         <div className="flex justify-center items-center border">
           <Image
-            src="/static/kawanlama.png"
+            src="/static/kawanlamagroup.png"
             width={254}
             height={25}
             alt="clients"
