@@ -14,7 +14,7 @@ const OurClients = () => {
           experiences.
         </p>
       </div>
-      <div className="grid grid-cols-3 mt-16">
+      <div className="grid grid-cols-3 mt-16 grayscale">
         <div className="flex justify-center items-center border">
           <Image src="/static/btpn.png" width={120} height={80} alt="clients" />
         </div>

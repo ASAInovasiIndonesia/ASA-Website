@@ -1,8 +1,13 @@
 "use client";
-import { Button } from "@nextui-org/react";
+import { Button, Input, Textarea } from "@nextui-org/react";
 import React, { useState } from "react";
+import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
+import { ArrowBack, ArrowNext } from "./icons";
 
 const CallToAction = () => {
+  const [slide, setSlide] = useState(0);
+  const [projectDetail, setProjectDetail] = useState("");
   return (
     <div className="bg-[url('/static/stock_image5.png')] bg-cover bg-center bg-no-repeat">
       <div className="bg-black/70 text-white w-full h-full pt-16">
@@ -17,12 +22,135 @@ const CallToAction = () => {
             </p>
           </div>
           <div className="ml-auto sm:max-w-[70%] overflow-x-hidden">
-            <div className="bg-white w-full p-10">
-              <h4 className="text-black">
-                Tell us what you're dreaming of, and let's make it a reality.
-              </h4>
-              <p>What service are you seeking assistance with today?</p>
-            </div>
+            <CarouselProvider
+              naturalSlideWidth={732}
+              naturalSlideHeight={520}
+              totalSlides={4}
+              visibleSlides={1}
+              currentSlide={slide}
+            >
+              <Slider>
+                <Slide index={0} className="bg-white text-black relative">
+                  <div className="flex flex-col gap-y-6 h-full justify-center items-start text-left max-w-[50%] mx-auto">
+                    <div className="text-3xl font-semibold">
+                      Tell us what you're dreaming of, and let's make it a
+                      reality.
+                    </div>
+                    <div className="text-2xl text-gray-500">
+                      What service are you seeking assistance with today?
+                    </div>
+                    <div className="flex gap-4 flex-wrap">
+                      <Button>Design Experience</Button>
+                      <Button>Design Service</Button>
+                      <Button>Communications Strategy</Button>
+                    </div>
+                  </div>
+                  <Button
+                    className="absolute bottom-10 right-10 bg-orange text-white"
+                    endContent={<ArrowNext />}
+                    onClick={() => setSlide(1)}
+                  >
+                    Next
+                  </Button>
+                </Slide>
+                <Slide index={1} className="bg-white text-black relative">
+                  <div className="flex flex-col gap-y-6 h-full justify-center items-start text-left max-w-[50%] mx-auto">
+                    <div className="text-3xl font-semibold">
+                      Does your business currently have a website, app, product,
+                      or service?
+                    </div>
+                    <div className="text-2xl text-gray-500">
+                      Share the details, and let's explore the possibilities
+                      together!
+                    </div>
+                    <Textarea
+                      placeholder="Share your project details"
+                      className="w-full"
+                      value={projectDetail}
+                      onValueChange={setProjectDetail}
+                    />
+                    <Button
+                      className="bg-orange text-white w-full"
+                      onClick={() => setSlide(2)}
+                    >
+                      Continue
+                    </Button>
+                  </div>
+                  <Button
+                    className="absolute bottom-10 left-10 bg-orange text-white"
+                    startContent={<ArrowBack />}
+                    onClick={() => setSlide(0)}
+                  >
+                    Back
+                  </Button>
+                </Slide>
+                <Slide index={2} className="bg-white text-black relative">
+                  <div className="flex flex-col gap-y-6 h-full justify-center items-start text-left max-w-[50%] mx-auto">
+                    <div className="text-3xl font-semibold">
+                      What's your budget for this transformative journey?
+                    </div>
+                    <div className="text-2xl text-gray-500">
+                      Help us understand, and we'll craft a plan that aligns
+                      with your goals
+                    </div>
+                    <Input
+                      placeholder="Type your budget"
+                      className="w-full"
+                      value={projectDetail}
+                      onValueChange={setProjectDetail}
+                    />
+                    <Button
+                      className="bg-orange text-white w-full"
+                      onClick={() => setSlide(3)}
+                    >
+                      Continue
+                    </Button>
+                  </div>
+                  <Button
+                    className="absolute bottom-10 left-10 bg-orange text-white"
+                    startContent={<ArrowBack />}
+                    onClick={() => setSlide(1)}
+                  >
+                    Back
+                  </Button>
+                </Slide>
+                <Slide index={3} className="bg-white text-black relative">
+                  <div className="flex flex-col gap-y-6 h-full justify-center items-start text-left max-w-[50%] mx-auto">
+                    <div className="text-3xl font-semibold">
+                      To ensure we provide the best support, may we have your
+                      name, email, and phone number?
+                    </div>
+                    <div className="text-2xl text-gray-500">
+                      Your journey towards success begins with us!
+                    </div>
+                    <div className="grid grid-cols-2 gap-4 w-full">
+                      <Input
+                        placeholder="Type your email"
+                        className="w-full"
+                        value={projectDetail}
+                        onValueChange={setProjectDetail}
+                      />
+                      <Input
+                        placeholder="Type your phone number"
+                        className="w-full"
+                        value={projectDetail}
+                        onValueChange={setProjectDetail}
+                      />
+                    </div>
+                    <Button className="bg-orange text-white w-full">
+                      Submit
+                    </Button>
+                  </div>
+                  <Button
+                    className="absolute bottom-10 left-10 bg-orange text-white"
+                    startContent={<ArrowBack />}
+                    onClick={() => setSlide(2)}
+                  >
+                    Back
+                  </Button>
+                </Slide>
+              </Slider>
+            </CarouselProvider>
           </div>
         </div>
       </div>
