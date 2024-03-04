@@ -1,10 +1,19 @@
 import React from "react";
 import CardInsight from "./CardInsight";
+import Image from "next/image";
 
 const InsightSection = () => {
   return (
-    <div className="py-24 bg-[url('/static/stock_image4.png')] bg-cover bg-top bg-no-repeat">
-      <div className="max-w-7xl mx-auto px-6 xl:px-4">
+    <div className="py-24 relative">
+      <Image
+        src="/static/stock_image4.png"
+        width={1441}
+        height={402}
+        unoptimized
+        className="absolute top-0 w-full"
+        alt="stock image"
+      />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 xl:px-4">
         <div className="mx-auto w-fit">
           <h4 className="text-4xl font-light">Read Our Insights</h4>
           <p className="pl-6 font-grotesque text-2xl border-l border-black mt-8">
