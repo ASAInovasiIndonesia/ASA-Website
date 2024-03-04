@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.text-hero {
-  font-size: clamp(70px, 6vw, 100px);
-}
-
 .linear-foreground {
   background-image: linear-gradient(
     to right,
