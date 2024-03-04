@@ -49,15 +49,15 @@ const HeroSection = () => {
         unoptimized
         alt="supergraphic1"
       />
-      <div className="relative h-full w-full z-10 max-w-7xl mx-auto px-6 xl:px-4 py-10 md:py-12 grid md:grid-cols-2 gap-4">
-        <div className="h-full flex flex-col justify-center gap-24 md:pb-36">
+      <div className="relative h-full w-full z-10 max-w-7xl mx-auto px-6 xl:px-4 py-6 sm:py-10 md:py-12 grid md:grid-cols-2 gap-4">
+        <div className="h-full flex flex-col justify-center gap-8 md:gap-24 md:pb-36">
           <Image
             src="/main.png"
             width={100.15}
             height={80.77}
             alt="main image"
           />
-          <h1 className="text-hero font-medium text-orange leading-[80px] md:leading-[110px]">
+          <h1 className="text-4xl sm:text-hero font-medium text-orange leading-[45px] sm:leading-[80px] md:leading-[90px] lg:leading-[100px]">
             <span className="text-white">From the</span>
             <br /> first hello <br /> <span className="text-white">
               to a
@@ -65,7 +65,7 @@ const HeroSection = () => {
             forever <br /> connection
           </h1>
         </div>
-        <div className="flex flex-col justify-end pb-12 text-white">
+        <div className="flex flex-col md:justify-end md:pb-12 text-white">
           <p className="font-grotesque font-light text-2xl mb-4 tracking-wider">
             Do you want to
           </p>
@@ -74,7 +74,7 @@ const HeroSection = () => {
               position === i && (
                 <h3
                   key={i}
-                  className="text-3xl font-light tracking-wide animate-in"
+                  className="text-xl sm:text-3xl font-light tracking-wide animate-in"
                   style={{ "--index": 1 } as React.CSSProperties}
                 >
                   {listString[i]}

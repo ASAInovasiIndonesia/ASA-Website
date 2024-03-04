@@ -54,9 +54,10 @@ const Testimonial = () => {
     };
   }, []);
   return (
-    <div className="bg-black text-white py-24 bg-[url('/static/stock_image3.png')] bg-contain bg-right bg-no-repeat">
-      <div className="max-w-7xl mx-auto px-6 xl:px-4 grid grid-cols-1 lg:grid-cols-5 gap-10">
-        <div className="lg:col-span-2">
+    <div className="bg-black text-white py-24 bg-[url('/static/stock_image3.png')] bg-contain bg-right bg-no-repeat relative">
+      <div className="bg-gradient-to-r from-black via-black/70 to-black/0 z-1 absolute top-0 w-full h-full" />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 xl:px-4 grid grid-cols-1 lg:grid-cols-5 gap-10">
+        <div className="lg:col-span-2 min-h-[400px] order-3 lg:order-1">
           {listTestimony.map(
             (item, idx) =>
               position === idx && (
@@ -80,7 +81,7 @@ const Testimonial = () => {
               )
           )}
         </div>
-        <div className="lg:col-span-3 -mx-6 lg:mx-0">
+        <div className="lg:col-span-3 -mx-6 lg:mx-0 order-2">
           <Image
             src="/static/stock_image2.png"
             width={711.11}

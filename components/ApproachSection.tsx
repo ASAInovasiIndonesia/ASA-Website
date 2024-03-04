@@ -20,9 +20,9 @@ const ApproachSection = () => {
         unoptimized
         alt="super graphic"
       />
-      <div className="relative z-10 max-w-7xl px-6 xl:px-4 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 py-24">
+      <div className="relative z-10 max-w-7xl px-6 xl:px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 py-24">
         <div>
-          <h2 className="uppercase text-[60px] font-semibold leading-[78px]">
+          <h2 className="uppercase text-4xl md:text-[60px] font-semibold leading-10 md:leading-[78px]">
             Innovative Approach for Lasting Impact
           </h2>
           <p className="font-grotesque text-2xl mt-8">
