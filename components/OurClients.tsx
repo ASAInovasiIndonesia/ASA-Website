@@ -19,7 +19,7 @@ const OurClients = () => {
           <Image src="/static/btpn.png" width={120} height={80} alt="clients" />
         </div>
         <div className="flex justify-center items-center border">
-          <Image src="/static/KPK.png" width={395} height={114} alt="clients" />
+          <Image src="/static/kpk.png" width={395} height={114} alt="clients" />
         </div>
         <div className="flex justify-center items-center border">
           <Image
