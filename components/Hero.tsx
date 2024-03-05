@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 const HeroSection = () => {
   const [position, setPosition] = useState(0);
   const listString = [
-    "Leverage your digital & physical channels to increase sales ?",
+    "Leverage Your Digital & Physical Channels to Increase Sales ?",
     "Increase Your Customer Satisfaction While Reducing Cost?",
     "Differentiate from Competitors and Build Loyalty?",
     "Generate Demand and Change Behaviour?",
@@ -40,11 +40,12 @@ const HeroSection = () => {
         autoPlay
         loop
       />
-      <div className="absolute z-1 linear-foreground1 w-full h-full" />
-      <div className="absolute z-2 linear-foreground2 transform -scale-y-100 w-full h-full" />
+      <div className="absolute z-1 linear-foreground1 ransform -scale-y-100 w-full h-full" />
+      <div className="absolute z-2 linear-foreground2 w-full h-full" />
+      <div className="absolute z-2 linear-foreground3 w-full h-full" />
       <Image
         src="/static/super_graphic1.png"
-        className="absolute z-[2] left-0 bottom-0"
+        className="absolute z-[2] left-0 bottom-0 md:h-[190px]"
         width={704}
         height={196}
         unoptimized
@@ -66,7 +67,7 @@ const HeroSection = () => {
             forever <br /> connection
           </h1>
         </div>
-        <div className="flex flex-col md:justify-end md:pb-12 text-white">
+        <div className="flex flex-col md:justify-end md:pb-24 text-white">
           <p className="font-grotesque font-light text-2xl mb-4 tracking-wider">
             Do you want to
           </p>
@@ -85,7 +86,7 @@ const HeroSection = () => {
           <Button
             as={Link}
             radius="none"
-            className="px-12 w-min mt-8 md:mt-12 font-semibold"
+            className="px-8 w-min mt-8 font-semibold"
             href="mailto:desi@asa-cx.com"
           >
             FREE CONSULTATION

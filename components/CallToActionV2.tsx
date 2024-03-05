@@ -8,7 +8,7 @@ const CallToActionV2 = () => {
       id="CTA"
       className="bg-[url('/static/stock_image5.png')] bg-cover bg-center bg-no-repeat"
     >
-      <div className="bg-black/70 text-white w-full h-full">
+      <div className="bg-black/80 text-white w-full h-full">
         <div className="max-w-5xl mx-auto px-6 xl:px-4 py-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <h3 className="text-3xl font-light">
@@ -24,7 +24,7 @@ const CallToActionV2 = () => {
           <Button
             as={Link}
             radius="none"
-            className="px-12 w-min mt-8 md:mt-12 font-semibold"
+            className="px-8 w-min mt-8 md:mt-12 font-semibold"
             href="mailto:desi@asa-cx.com"
           >
             FREE CONSULTATION

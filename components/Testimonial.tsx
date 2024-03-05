@@ -7,7 +7,12 @@ const Testimonial = () => {
   const listTestimony = [
     {
       name: "Widyanto Eko Nugroho",
-      role: "Kepala Bidang Pengelolaan Kinerja dan Risiko Komisi Pemberantasan Korupsi RI",
+      role: (
+        <>
+          Kepala Bidang Pengelolaan Kinerja dan Risiko <br /> Komisi
+          Pemberantasan Korupsi RI
+        </>
+      ),
       msg: "Dengan adanya proyek yang diselesaikan oleh ASA, saat ini organisasi/ unit kerja saya memiliki strategi komunikasi sebagaimana yang direncanakan. Dalam pandangan saya, ini merupakan kemajuan yang signifikan mengingat strategi komunikasi manajemen risiko lebih terstruktur, mudah dieksekusi, tahapannya jelas, produknya dapat digunakan.",
     },
     // {
@@ -32,7 +37,11 @@ const Testimonial = () => {
     // },
     {
       name: "Yerni Sitorus",
-      role: "Design AnalystPT EIGERINDO Multiproduk Industri",
+      role: (
+        <>
+          Design Analyst <br /> EIGER
+        </>
+      ),
       msg: "ASA membantu banyak di design MPOS yang awalnya kami hanya ada POS Desktop. Selama bersama dengan ASA kita juga melakukan UT untuk collect data dari kasir dan tim ASA pun banyak memberikan insights ke EIGER terkait development MPOS yang berguna untuk EIGER.",
     },
   ];
