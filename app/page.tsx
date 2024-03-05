@@ -1,5 +1,5 @@
 import ApproachSection from "@/components/ApproachSection";
-import CallToAction from "@/components/CallToAction";
+import CallToActionV2 from "@/components/CallToActionV2";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/Hero";
 import InsightSection from "@/components/InsightSection";
@@ -17,7 +17,7 @@ const HomePage = () => {
       <OurClients />
       <Testimonial />
       <InsightSection />
-      <CallToAction />
+      <CallToActionV2 />
       <Footer />
     </>
   );

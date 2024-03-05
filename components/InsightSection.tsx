@@ -15,10 +15,12 @@ const InsightSection = () => {
       />
       <div className="relative z-10 max-w-7xl mx-auto px-6 xl:px-4">
         <div className="mx-auto w-fit">
-          <h4 className="text-4xl font-light">Read Our Insights</h4>
+          <h4 className="uppercase text-4xl font-semibold">
+            Read Our Insights
+          </h4>
           <p className="pl-6 font-grotesque text-2xl border-l border-black mt-8">
-            Explore In-Depth Articles for Business Growth and <br /> Customer
-            Experience Excellence
+            Explore in-depth articles for business growth and <br /> customer
+            experience excellence
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

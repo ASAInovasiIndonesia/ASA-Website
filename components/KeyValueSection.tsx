@@ -53,7 +53,7 @@ const KeyValueSection = () => {
         <div className="flex justify-start md:justify-end gap-4 flex-wrap mt-10 md:mt-0">
           <KeyCard
             title="Human- Centered"
-            desc="By continuously empathizing with our clients and customers, we understand client’s goals and become partners to achieve them."
+            desc="By continuously empathizing with our clients and customers, we understand client’s goals, customer needs, and become partners to achieve them."
           />
           <KeyCard
             title="Focus on Impact"
@@ -85,7 +85,7 @@ const KeyValueSection = () => {
       <div className="flex flex-col md:flex-row gap-8">
         <KeyWithPoint title="Customer Experience Strategy and Design​">
           <li>Research & Assessment</li>
-          <li>Design Thinking WorkShops</li>
+          <li>Design Thinking Workshops</li>
           <li>CX Strategy & Journey Optimization</li>
           <li>Advisory & Trainings</li>
         </KeyWithPoint>
@@ -98,8 +98,8 @@ const KeyValueSection = () => {
         <KeyWithPoint title="Communications Services​">
           <li>Communication Strategy</li>
           <li>Digital Campaign & Activation</li>
-          <li>Above The Line</li>
-          <li>Below The Line</li>
+          <li>Above the Line</li>
+          <li>Below the Line</li>
         </KeyWithPoint>
       </div>
     </div>

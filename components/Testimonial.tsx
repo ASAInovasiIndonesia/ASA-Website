@@ -10,26 +10,26 @@ const Testimonial = () => {
       role: "Kepala Bidang Pengelolaan Kinerja dan Risiko Komisi Pemberantasan Korupsi RI",
       msg: "Dengan adanya proyek yang diselesaikan oleh ASA, saat ini organisasi/ unit kerja saya memiliki strategi komunikasi sebagaimana yang direncanakan. Dalam pandangan saya, ini merupakan kemajuan yang signifikan mengingat strategi komunikasi manajemen risiko lebih terstruktur, mudah dieksekusi, tahapannya jelas, produknya dapat digunakan.",
     },
-    {
-      name: "Zafrullah Sunyaruri & alfred",
-      role: "ECOMMERCE MANAGER & SALES MANAGER",
-      msg: "Membuat jouney manual / offline menjadi user dan customer journey online by platform dan  Rekomendasi yang kritis dari sisi sudut pandang customer.",
-    },
-    {
-      name: "Galuh Perdana Putra",
-      role: "System Analyst PT EIGERINDO Multiproduk Industri",
-      msg: "Untuk gathering requirement terasa hal baru yang bisa dipelajari",
-    },
-    {
-      name: "Ridhan Thirafi Abadi",
-      role: "Product Manager PT EIGERINDO Multiproduk Industri",
-      msg: "Sebenernya Problem atau challenge selalu ada. Masukan dari tim ASA terkait prioritas fitur untuk membantu customer lumayan membantu",
-    },
-    {
-      name: "Adeteni",
-      role: "Product Manager Officer PT EIGERINDO Multiproduk Industri",
-      msg: "Responsibility dan Responsif yang baik",
-    },
+    // {
+    //   name: "Zafrullah Sunyaruri & alfred",
+    //   role: "ECOMMERCE MANAGER & SALES MANAGER",
+    //   msg: "Membuat jouney manual / offline menjadi user dan customer journey online by platform dan  Rekomendasi yang kritis dari sisi sudut pandang customer.",
+    // },
+    // {
+    //   name: "Galuh Perdana Putra",
+    //   role: "System Analyst PT EIGERINDO Multiproduk Industri",
+    //   msg: "Untuk gathering requirement terasa hal baru yang bisa dipelajari",
+    // },
+    // {
+    //   name: "Ridhan Thirafi Abadi",
+    //   role: "Product Manager PT EIGERINDO Multiproduk Industri",
+    //   msg: "Sebenernya Problem atau challenge selalu ada. Masukan dari tim ASA terkait prioritas fitur untuk membantu customer lumayan membantu",
+    // },
+    // {
+    //   name: "Adeteni",
+    //   role: "Product Manager Officer PT EIGERINDO Multiproduk Industri",
+    //   msg: "Responsibility dan Responsif yang baik",
+    // },
     {
       name: "Yerni Sitorus",
       role: "Design AnalystPT EIGERINDO Multiproduk Industri",
@@ -40,13 +40,13 @@ const Testimonial = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setPosition((prev) => {
-        if (prev === 5) {
+        if (prev === 1) {
           return 0;
         } else {
           return prev + 1;
         }
       });
-    }, 4000);
+    }, 8000);
 
     // Clean up the interval when the component is unmounted
     return () => {
@@ -54,10 +54,10 @@ const Testimonial = () => {
     };
   }, []);
   return (
-    <div className="bg-black text-white py-24 bg-[url('/static/stock_image3.png')] bg-contain bg-right bg-no-repeat relative">
+    <div className="bg-black text-white pb-12 lg:pb-24 pt-24 bg-[url('/static/stock_image3.png')] bg-contain bg-right bg-no-repeat relative">
       <div className="bg-gradient-to-r from-black via-black/70 to-black/0 z-1 absolute top-0 w-full h-full" />
       <div className="relative z-10 max-w-7xl mx-auto px-6 xl:px-4 grid grid-cols-1 lg:grid-cols-5 gap-10">
-        <div className="lg:col-span-2 min-h-[400px] order-3 lg:order-1">
+        <div className="lg:col-span-2 min-h-[425px] lg:min-h-auto order-3 lg:order-1">
           {listTestimony.map(
             (item, idx) =>
               position === idx && (

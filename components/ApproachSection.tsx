@@ -26,7 +26,7 @@ const ApproachSection = () => {
             Innovative Approach for Lasting Impact
           </h2>
           <p className="font-grotesque text-2xl mt-8">
-            we innovate experiences through a strategic embrace of Design
+            We innovate experiences through a strategic embrace of Design
             Thinking. This transformative approach is the cornerstone of our
             commitment to lasting impact.
           </p>

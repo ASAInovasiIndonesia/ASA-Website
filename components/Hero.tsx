@@ -32,15 +32,16 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="w-full h-[100svh] relative overflow-hidden">
+    <div className="w-full h-[100svh] relative">
       <video
         src="/static/hero_video.mp4"
-        className="absolute z-0 top-0 w-full h-full object-cover object-center"
+        className="absolute z-0 top-0 -right-[15%] w-full h-full object-cover object-center"
         muted
         autoPlay
         loop
       />
-      <div className="absolute z-1 linear-foreground w-full h-full" />
+      <div className="absolute z-1 linear-foreground1 w-full h-full" />
+      <div className="absolute z-2 linear-foreground2 transform -scale-y-100 w-full h-full" />
       <Image
         src="/static/super_graphic1.png"
         className="absolute z-[2] left-0 bottom-0"
@@ -84,9 +85,8 @@ const HeroSection = () => {
           <Button
             as={Link}
             radius="none"
-            className="px-16 w-min mt-12 font-semibold"
-            size="lg"
-            href="#CTA"
+            className="px-12 w-min mt-8 md:mt-12 font-semibold"
+            href="mailto:desi@asa-cx.com"
           >
             FREE CONSULTATION
           </Button>

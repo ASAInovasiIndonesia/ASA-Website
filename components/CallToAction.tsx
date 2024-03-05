@@ -17,11 +17,13 @@ const CallToAction = () => {
         <div className="max-w-7xl mx-auto">
           <div className="ml-auto w-full px-6 lg:px-0 lg:max-w-[70%] grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
             <h3 className="text-3xl font-light">
-              Let Us Know About Your Project
+              Let Us Know <br /> About Your Needs
             </h3>
             <p className="md:border-l border-white md:pl-6 font-grotesque text-xl">
               From the first hello to a forever connection, embark on your
-              journey to success with ASA CX.{" "}
+              journey to success with ASA CX Consulting. Schedule a consultation
+              today and explore how our expertise can drive meaningful results
+              for you.
             </p>
           </div>
           <div className="ml-auto w-full px-6 lg:px-0 lg:max-w-[70%] overflow-x-hidden">
