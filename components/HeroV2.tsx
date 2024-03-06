@@ -86,26 +86,31 @@ const HeroV2 = () => {
           <p className="font-grotesque font-light text-xl sm:text-2xl mb-4 tracking-wider">
             Do you want to
           </p>
-          {listString.map(
-            (item, i) =>
-              position === i && (
-                <h3
-                  key={i}
-                  className="text-xl sm:text-4xl max-w-[643px] font-light tracking-wide animate-in"
-                  style={{ "--index": 1 } as React.CSSProperties}
-                >
-                  {listString[i]}
-                </h3>
-              )
-          )}
-          <Button
-            as={Link}
-            radius="none"
-            className="px-8 w-min mt-8 font-semibold bg-white"
-            href="mailto:desi@asa-cx.com"
-          >
-            Talk to Us
-          </Button>
+          <div className="flex gap-8 flex-col lg:flex-row lg:items-start">
+            {listString.map(
+              (item, i) =>
+                position === i && (
+                  <h3
+                    key={i}
+                    className="text-xl sm:text-4xl max-w-[643px] font-light tracking-wide animate-in"
+                    style={{ "--index": 1 } as React.CSSProperties}
+                  >
+                    {listString[i]}
+                  </h3>
+                )
+            )}
+            <div className="flex gap-8 items-center">
+              <div className="border-b border-white hidden lg:block w-36" />
+              <Button
+                as={Link}
+                radius="none"
+                className="px-8 w-min font-semibold bg-white"
+                href="mailto:desi@asa-cx.com"
+              >
+                Talk to Us
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </>
