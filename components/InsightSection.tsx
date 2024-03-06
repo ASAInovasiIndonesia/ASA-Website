@@ -16,11 +16,10 @@ const InsightSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 xl:px-4">
         <div className="mx-auto w-fit">
           <h4 className="uppercase text-4xl font-semibold">
-            Read Our Insights
+            Read Our Thoughts
           </h4>
           <p className="pl-6 font-grotesque text-2xl border-l border-black mt-8">
-            Explore in-depth articles for business growth and <br /> customer
-            experience excellence
+            Explore in-depth articles for UI/UX and customer experience journey
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -31,6 +30,7 @@ const InsightSection = () => {
             manfaat yang besar bagi keseharian pengguna."
             avatar="/static/avatar_irsan.png"
             name="Irsan Wijaya"
+            date="11 Jan 2024 &#x2022; 5 min read"
           />
           <CardInsight
             image="/static/article2.png"
@@ -38,6 +38,7 @@ const InsightSection = () => {
             desc="Heuristic Evaluation adalah sebuah metode evaluasi UI pada sebuah produk digital yang mengacu pada guideline (Heuristic)."
             avatar="/static/avatar_kukuh.png"
             name="Kukuh Satria Putra"
+            date="20 Feb 2024 &#x2022; 5 min read"
           />
           <CardInsight
             image="/static/article3.png"
@@ -45,6 +46,7 @@ const InsightSection = () => {
             desc="Struktur halaman adalah panduan tata letak penempatan komponen di sebuah halaman app (aplikasi) maupun website"
             avatar="/static/avatar_kinan.png"
             name="Kinanti"
+            date="1 March 2024 &#x2022; 5 min read"
           />
         </div>
       </div>

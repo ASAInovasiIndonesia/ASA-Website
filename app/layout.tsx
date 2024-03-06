@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://asa-website-dev.vercel.app"),
   title: "Asa CX Consulting & Design",
   description:
-    "From the first hello to a forever connection, embark on your journey to success with ASA CX Consulting. Schedule a consultation today and explore how our expertise can drive meaningful results for you.",
-  keywords: "asa cx, cx consulting, ui/ux, user experience",
+    "From the first hello to a forever connection, embark on your journey to success with ASA CX.",
   openGraph: {
     type: "website",
     url: "https://asa-website-dev.vercel.app",
-    title: "Invitary | Next step of website invitations",
-    description: "Next step of website invitations",
-    siteName: "Invitary",
+    title: "Asa CX Consulting & Design",
+    description:
+      "From the first hello to a forever connection, embark on your journey to success with ASA CX.",
+    siteName: "ASA Indonesia",
     images: [
       { url: "https://asa-website-dev.vercel.app/apple-touch-icon.png?" },
     ],

@@ -9,12 +9,14 @@ const CardInsight = ({
   desc,
   avatar,
   name,
+  date,
 }: {
   image: string;
   title: string;
   desc: string;
   avatar: string;
   name: string;
+  date: string;
 }) => {
   return (
     <Card radius="none" classNames={{ base: "rounded-none shadow-none" }}>
@@ -32,9 +34,7 @@ const CardInsight = ({
           <Avatar src={avatar} />
           <div>
             <div className="font-semibold">{name}</div>
-            <div className="text-sm font-light tracking-wider">
-              11 Jan 2022 &#x2022; 5 min read
-            </div>
+            <div className="text-sm font-light tracking-wider">{date}</div>
           </div>
         </div>
       </CardBody>

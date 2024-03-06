@@ -9,8 +9,8 @@ const OurClients = () => {
           Our Valued <br /> Clients
         </h2>
         <p className="text-2xl font-grotesque font-medium px-6 border-l-2">
-          We partnered with a diverse range of clients to elevate their
-          businesses through tailored solutions and exceptional customer
+          We partner with a diverse range of clients to elevate and transform
+          their businesses through tailored solutions and satisfying customer
           experiences.
         </p>
       </div>

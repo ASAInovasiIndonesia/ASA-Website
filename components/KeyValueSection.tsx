@@ -22,7 +22,7 @@ const KeyWithPoint = ({
   return (
     <div className="pl-6 border-l border-black w-full max-w-[333px]">
       <h3 className="text-[28px] font-semibold">{title}</h3>
-      <ul className="list-disc ml-6 text-xl mt-2 font-grotesque">{children}</ul>
+      <div className="text-xl mt-2 font-grotesque">{children}</div>
     </div>
   );
 };
@@ -34,10 +34,12 @@ const KeyValueSection = () => {
         <div className="flex gap-4 items-center">
           <div className="max-w-[400px]">
             <div className="text-orange uppercase font-bold text-4xl leading-[50px]">
-              We bring experience and expertise to ensure your success
+              WE BRING EXPERIENCE AND EXPERTISE TO DELIVER ONLY THE BEST
             </div>
             <div className="font-grotesque text-2xl font-medium pl-4 border-l-2 mt-4">
-              Our project approach consists of these three things:
+              We merge human touch and <br /> technology to integrate global{" "}
+              <br /> experience into local insights, with <br /> the synergy of
+              various expertise.
             </div>
           </div>
           <Image
@@ -52,16 +54,16 @@ const KeyValueSection = () => {
 
         <div className="flex justify-start md:justify-end gap-4 flex-wrap mt-10 md:mt-0">
           <KeyCard
-            title="Human- Centered"
-            desc="By continuously empathizing with our clients and customers, we understand client’s goals, customer needs, and become partners to achieve them."
+            title="Human Centered"
+            desc="We continuously empathize with clients and customers, based on our own experiences and proven results, to help achieve your objectives."
           />
           <KeyCard
             title="Focus on Impact"
-            desc="We take clients who have similar vision and commitment with us to achieve both business and social impact."
+            desc="We work alongside people with similar vision and commitment  to achieve both business and social impact."
           />
           <KeyCard
             title="Team of Expert"
-            desc="We handpicked the best people with many years of relevant experience to collaborate with clients and lead the team to achieve optimal results."
+            desc="We handpicked the best people with many years of relevant experiences to collaborate with you, and lead the team to achieve optimum results."
           />
         </div>
       </div>
@@ -74,32 +76,28 @@ const KeyValueSection = () => {
           alt="stock image"
         />
         <div className="max-w-[436px] pl-6 lg:pl-0">
-          <h3 className="uppercase text-4xl font-bold">Our Services</h3>
+          <h3 className="uppercase font-bold text-4xl leading-[50px]">
+            END-TO-END SERVICES ECOSYSTEM FOR MAXIMUM IMPACT
+          </h3>
           <p className="font-grotesque text-2xl font-medium border-l border-black pl-6 mt-8">
-            We drive values for customers as well as internal operations along
-            the end-to-end customer journey by combining service design and
-            communications.​
+            We not only map out strategies, but also ensures effective
+            implementation through top-notch services, leading to more impactful
+            outcomes.
           </p>
         </div>
       </div>
       <div className="flex flex-col md:flex-row gap-8">
-        <KeyWithPoint title="Customer Experience Strategy and Design​">
-          <li>Research & Assessment</li>
-          <li>Design Thinking Workshops</li>
-          <li>CX Strategy & Journey Optimization</li>
-          <li>Advisory & Trainings</li>
+        <KeyWithPoint title="Customer Experience Strategy & Design​">
+          We define strategies that can elevate and transform your customer
+          experiences.
         </KeyWithPoint>
-        <KeyWithPoint title="Implementation​">
-          <li>Design System</li>
-          <li>Web & Mobile Design</li>
-          <li>Physical Design</li>
-          <li>Content Strategy & SEO</li>
+        <KeyWithPoint title="Impactful Implementation​">
+          We turn strategies into actions, focusing on product offerings and
+          services that can answer your customer needs and business objectives.
         </KeyWithPoint>
-        <KeyWithPoint title="Communications Services​">
-          <li>Communication Strategy</li>
-          <li>Digital Campaign & Activation</li>
-          <li>Above the Line</li>
-          <li>Below the Line</li>
+        <KeyWithPoint title="Effective Communications​">
+          We turn insights into communications that influence customers
+          behavior.
         </KeyWithPoint>
       </div>
     </div>

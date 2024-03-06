@@ -90,7 +90,7 @@ const HeroSection = () => {
             className="px-8 w-min mt-8 font-semibold"
             href="mailto:desi@asa-cx.com"
           >
-            FREE CONSULTATION
+            Talk to Us
           </Button>
         </div>
       </div>
