@@ -72,7 +72,7 @@ const HeroV2 = () => {
             height={80.77}
             alt="main image"
           />
-          <h1 className="text-orange text-hero font-normal pt-32 xl:pt-0 xl:pl-80 pb-36 xl:pb-52">
+          <h1 className="text-orange text-hero font-normal pt-32 xl:pt-0 xl:pl-96 pb-36 xl:pb-52">
             <span className="text-white">From the</span>
             <br /> first hello <br /> <span className="text-white">
               to a

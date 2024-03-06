@@ -23,7 +23,7 @@ const ApproachSection = () => {
       <div className="relative z-10 max-w-7xl px-6 xl:px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 py-24">
         <div>
           <h2 className="uppercase text-4xl md:text-[60px] font-semibold leading-10 md:leading-[78px] tracking-wide">
-            HUMAN CENTERED APPROACH <br /> FOR BETTER COLLABORATION
+            HUMAN-CENTERED APPROACH <br /> FOR BETTER COLLABORATION
           </h2>
           <p className="font-grotesque text-2xl mt-8">
             We innovate experiences through a systemic approach of Design

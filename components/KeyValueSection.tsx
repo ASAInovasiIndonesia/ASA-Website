@@ -52,10 +52,10 @@ const KeyValueSection = () => {
           />
         </div>
 
-        <div className="flex justify-start md:justify-end gap-4 flex-wrap mt-10 md:mt-0">
+        <div className="flex justify-start md:justify-end gap-4 flex-wrap mt-10 xl:mt-0">
           <KeyCard
-            title="Human Centered"
-            desc="We continuously empathize with clients and customers, based on our own experiences and proven results, to help achieve your objectives."
+            title="Human-Centered"
+            desc="We continuously empathize with clients and customers, proven results to help achieve your objectives."
           />
           <KeyCard
             title="Focus on Impact"
