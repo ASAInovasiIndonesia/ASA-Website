@@ -70,6 +70,7 @@ const HeroV2 = () => {
             src="/main.png"
             width={100.15}
             height={80.77}
+            unoptimized
             alt="main image"
           />
           <h1 className="text-orange text-hero font-normal pt-32 xl:pt-0 xl:pl-96 pb-36 xl:pb-52">

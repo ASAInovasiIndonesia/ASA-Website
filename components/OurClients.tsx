@@ -25,7 +25,13 @@ const OurClients = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 mt-16 grayscale">
         {listClients.map((item, idx) => (
           <div key={idx} className="flex justify-center items-center border">
-            <Image src={item} width={320} height={156} alt="clients" />
+            <Image
+              src={item}
+              width={320}
+              height={156}
+              unoptimized
+              alt="clients"
+            />
           </div>
         ))}
       </div>

@@ -7,7 +7,13 @@ const Footer = () => {
   return (
     <div className="bg-black text-white py-14">
       <div className="max-w-7xl mx-auto px-6 xl:px-4 flex flex-col sm:flex-row justify-center sm:justify-between items-center sm:items-end gap-4">
-        <Image src="/main.png" width={61} height={49} alt="main image" />
+        <Image
+          src="/main.png"
+          width={61}
+          height={49}
+          unoptimized
+          alt="main image"
+        />
         <div className="text-sm font-light">
           © 2023 ASA Inovasi Indonesia. All rights reserved.
         </div>

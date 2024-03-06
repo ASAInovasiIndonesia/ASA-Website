@@ -58,6 +58,7 @@ const HeroSection = () => {
             src="/main.png"
             width={100.15}
             height={80.77}
+            unoptimized
             alt="main image"
           />
           <h1 className="text-4xl sm:text-hero font-medium text-orange leading-[45px] sm:leading-[80px] md:leading-[90px] lg:leading-[100px]">

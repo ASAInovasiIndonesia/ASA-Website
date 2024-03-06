@@ -73,6 +73,7 @@ const KeyValueSection = () => {
           className="aspect-[994/663] lg:aspect-[517/402] object-cover object-center w-full lg:w-[517px]"
           width={517}
           height={402}
+          unoptimized
           alt="stock image"
         />
         <div className="max-w-[436px] pl-6 lg:pl-0">
