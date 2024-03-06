@@ -1,7 +1,7 @@
 import ApproachSection from "@/components/ApproachSection";
 import CallToActionV2 from "@/components/CallToActionV2";
 import Footer from "@/components/Footer";
-import HeroSection from "@/components/Hero";
+import HeroV2 from "@/components/HeroV2";
 import InsightSection from "@/components/InsightSection";
 import KeyValueSection from "@/components/KeyValueSection";
 import OurClients from "@/components/OurClients";
@@ -11,7 +11,7 @@ import React from "react";
 const HomePage = () => {
   return (
     <>
-      <HeroSection />
+      <HeroV2 />
       <KeyValueSection />
       <ApproachSection />
       <OurClients />

@@ -10,9 +10,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontSize: {
-        hero: "clamp(70px, 6vw, 100px)",
-      },
       fontFamily: {
         grotesque: ["var(--font-grotesque)", "sans-serif"],
       },

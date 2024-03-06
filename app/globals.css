@@ -56,3 +56,8 @@
 .animate-in {
   animation-delay: calc(var(--index) * 130ms);
 }
+
+.text-hero {
+  font-size: clamp(70px, 8vw, 120px);
+  line-height: clamp(70px, 8vw, 120px);
+}
