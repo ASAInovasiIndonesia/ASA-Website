@@ -37,6 +37,7 @@ const HeroSection = () => {
         src="/static/hero_video.mp4"
         className="absolute z-0 top-0 -right-[15%] w-full h-full object-cover object-center"
         muted
+        playsInline
         autoPlay
         loop
       />
