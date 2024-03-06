@@ -15,26 +15,6 @@ const Testimonial = () => {
       ),
       msg: "Dengan adanya proyek yang diselesaikan oleh ASA, saat ini organisasi/ unit kerja saya memiliki strategi komunikasi sebagaimana yang direncanakan. Dalam pandangan saya, ini merupakan kemajuan yang signifikan mengingat strategi komunikasi manajemen risiko lebih terstruktur, mudah dieksekusi, tahapannya jelas, produknya dapat digunakan.",
     },
-    // {
-    //   name: "Zafrullah Sunyaruri & alfred",
-    //   role: "ECOMMERCE MANAGER & SALES MANAGER",
-    //   msg: "Membuat jouney manual / offline menjadi user dan customer journey online by platform dan  Rekomendasi yang kritis dari sisi sudut pandang customer.",
-    // },
-    // {
-    //   name: "Galuh Perdana Putra",
-    //   role: "System Analyst PT EIGERINDO Multiproduk Industri",
-    //   msg: "Untuk gathering requirement terasa hal baru yang bisa dipelajari",
-    // },
-    // {
-    //   name: "Ridhan Thirafi Abadi",
-    //   role: "Product Manager PT EIGERINDO Multiproduk Industri",
-    //   msg: "Sebenernya Problem atau challenge selalu ada. Masukan dari tim ASA terkait prioritas fitur untuk membantu customer lumayan membantu",
-    // },
-    // {
-    //   name: "Adeteni",
-    //   role: "Product Manager Officer PT EIGERINDO Multiproduk Industri",
-    //   msg: "Responsibility dan Responsif yang baik",
-    // },
     {
       name: "Yerni Sitorus",
       role: (
@@ -44,12 +24,30 @@ const Testimonial = () => {
       ),
       msg: "ASA membantu banyak di design MPOS yang awalnya kami hanya ada POS Desktop. Selama bersama dengan ASA kita juga melakukan UT untuk collect data dari kasir dan tim ASA pun banyak memberikan insights ke EIGER terkait development MPOS yang berguna untuk EIGER.",
     },
+    {
+      name: "Dewi Miranda",
+      role: (
+        <>
+          General Manager Marketing & Loyalty <br /> Super Indo
+        </>
+      ),
+      msg: "Perbaikan pada revamp aplikasi loyalty bersama ASA mempermudah registrasi member, dan design integrasi dengan ecommerce menghasilkan 3.8 millions new apps downloads.",
+    },
+    {
+      name: "Dewi Miranda",
+      role: (
+        <>
+          General Manager Marketing & Loyalty <br /> Super Indo
+        </>
+      ),
+      msg: "ASA membuka wawasan untuk melakukan tahapan/milestones dari project apps development. Seperti dengan: memberikan arahan yang tepat dan menentukan resource yang diperlukan, proses yang terstruktur dan transfer knowledge mengenai apps development, memberikan guide customer journey yang jelas, serta ui/ux design guide yang meningkatkan pengetahuan dan skill internal resources.",
+    },
   ];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setPosition((prev) => {
-        if (prev === 1) {
+        if (prev === 3) {
           return 0;
         } else {
           return prev + 1;
