@@ -80,7 +80,7 @@ const KeyValueSection = () => {
           <h3 className="uppercase font-bold text-4xl leading-[50px]">
             END-TO-END SERVICES ECOSYSTEM FOR MAXIMUM IMPACT
           </h3>
-          <p className="font-grotesque text-2xl font-medium border-l border-black pl-6 mt-8">
+          <p className="font-grotesque text-2xl font-medium border-l border-black pl-6 pr-6 lg:pr-0 mt-8">
             We not only map out strategies, but also ensures effective
             implementation through top-notch services, leading to more impactful
             outcomes.
