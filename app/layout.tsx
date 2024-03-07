@@ -11,20 +11,18 @@ const grotesque = Darker_Grotesque({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://asa-website-dev.vercel.app"),
+  metadataBase: new URL("https://asaindonesia.net"),
   title: "Asa CX Consulting & Design",
   description:
     "From the first hello to a forever connection, embark on your journey to success with ASA CX.",
   openGraph: {
     type: "website",
-    url: "https://asa-website-dev.vercel.app",
+    url: "https://asaindonesia.net",
     title: "Asa CX Consulting & Design",
     description:
       "From the first hello to a forever connection, embark on your journey to success with ASA CX.",
     siteName: "ASA Indonesia",
-    images: [
-      { url: "https://asa-website-dev.vercel.app/apple-touch-icon.png?" },
-    ],
+    images: [{ url: "https://asaindonesia.net/apple-touch-icon.png?" }],
   },
 };
 
