@@ -13,7 +13,7 @@ const Testimonial = () => {
           Pemberantasan Korupsi RI
         </>
       ),
-      msg: "“Dengan adanya proyek yang diselesaikan oleh ASA, saat ini organisasi/ unit kerja saya memiliki strategi komunikasi sebagaimana yang direncanakan. Dalam pandangan saya, ini merupakan kemajuan yang signifikan mengingat strategi komunikasi menjadi lebih terstruktur, mudah dieksekusi, tahapannya jelas, produknya dapat digunakan.”",
+      msg: "“Dengan adanya proyek yang diselesaikan oleh ASA, saat ini organisasi/unit kerja saya memiliki strategi komunikasi manajemen risiko yang lebih baik. Dalam pandangan saya, ini merupakan kemajuan yang signifikan mengingat strategi komunikasi menjadi lebih terstruktur, mudah dieksekusi, tahapannya jelas, produknya dapat digunakan.”",
     },
     {
       name: "Yerni Sitorus",
