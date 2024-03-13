@@ -1,6 +1,7 @@
 "use client";
+import { useInView } from "framer-motion";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Testimonial = () => {
   const [position, setPosition] = useState(0);
@@ -44,27 +45,52 @@ const Testimonial = () => {
     },
   ];
 
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const [intervalId, setIntervalId] = useState<any>(null);
+
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setPosition((prev) => {
-        if (prev === 3) {
-          return 0;
-        } else {
-          return prev + 1;
-        }
-      });
-    }, 15 * 1000);
+    if (isInView) {
+      startInterval();
+    } else {
+      stopInterval();
+    }
 
     // Clean up the interval when the component is unmounted
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [isInView]);
+
+  const startInterval = () => {
+    setIntervalId(
+      setInterval(() => {
+        setPosition((prev) => {
+          if (prev === 3) {
+            return 0;
+          } else {
+            return prev + 1;
+          }
+        });
+      }, 4000)
+    );
+  };
+
+  const stopInterval = () => {
+    if (intervalId) {
+      clearInterval(intervalId);
+      setIntervalId(null);
+    }
+  };
+
   return (
     <div className="bg-black text-white pb-12 lg:pb-24 pt-24 bg-[url('/static/stock_image3.png')] bg-contain bg-right bg-no-repeat relative">
       <div className="bg-gradient-to-r from-black via-black/70 to-black/0 z-1 absolute top-0 w-full h-full" />
       <div className="relative z-10 max-w-7xl mx-auto px-6 xl:px-4 grid grid-cols-1 lg:grid-cols-5 gap-10">
-        <div className="lg:col-span-2 min-h-[425px] lg:min-h-auto order-3 lg:order-1">
+        <div
+          ref={ref}
+          className="lg:col-span-2 min-h-[425px] lg:min-h-auto order-3 lg:order-1"
+        >
           {listTestimony.map(
             (item, idx) =>
               position === idx && (

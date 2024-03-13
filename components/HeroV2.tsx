@@ -1,9 +1,10 @@
 "use client";
 
 import { Button } from "@nextui-org/react";
+import { useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const HeroV2 = () => {
   const [position, setPosition] = useState(0);
@@ -14,22 +15,43 @@ const HeroV2 = () => {
     "Generate Demand and Change Behaviour?",
   ];
 
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const [intervalId, setIntervalId] = useState<any>(null);
+
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setPosition((prev) => {
-        if (prev === 3) {
-          return 0;
-        } else {
-          return prev + 1;
-        }
-      });
-    }, 4000);
+    if (isInView) {
+      startInterval();
+    } else {
+      stopInterval();
+    }
 
     // Clean up the interval when the component is unmounted
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [isInView]);
+
+  const startInterval = () => {
+    setIntervalId(
+      setInterval(() => {
+        setPosition((prev) => {
+          if (prev === 3) {
+            return 0;
+          } else {
+            return prev + 1;
+          }
+        });
+      }, 4000)
+    );
+  };
+
+  const stopInterval = () => {
+    if (intervalId) {
+      clearInterval(intervalId);
+      setIntervalId(null);
+    }
+  };
 
   return (
     <>
@@ -83,7 +105,7 @@ const HeroV2 = () => {
         </div>
       </div>
       <div className="bg-black text-white pt-6 pb-12 px-6 xl:px-4">
-        <div className="max-w-7xl mx-auto">
+        <div ref={ref} className="max-w-7xl mx-auto">
           <p className="font-grotesque font-light text-xl sm:text-2xl mb-4 tracking-wider">
             Do you want to
           </p>
