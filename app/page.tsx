@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import HeroV2 from "@/components/HeroV2";
 // import InsightSection from "@/components/InsightSection";
 import KeyValueSection from "@/components/KeyValueSection";
+import KeyValueSection2 from "@/components/KeyValueSection2";
 import OurClients from "@/components/OurClients";
 import Testimonial from "@/components/Testimonial";
 import React from "react";
@@ -13,9 +14,10 @@ const HomePage = () => {
     <>
       <HeroV2 />
       <KeyValueSection />
+      <Testimonial />
+      <KeyValueSection2 />
       <ApproachSection />
       <OurClients />
-      <Testimonial />
       {/* <InsightSection /> */}
       <CallToActionV2 />
       <Footer />

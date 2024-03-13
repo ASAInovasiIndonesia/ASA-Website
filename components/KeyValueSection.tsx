@@ -67,7 +67,7 @@ const KeyValueSection = () => {
           />
         </div>
       </div>
-      <div className="flex items-start lg:items-center flex-col lg:flex-row gap-12 lg:gap-6 -mx-6 lg:mx-0">
+      {/* <div className="flex items-start lg:items-center flex-col lg:flex-row gap-12 lg:gap-6 -mx-6 lg:mx-0">
         <Image
           src="/static/stock_image1.png"
           className="aspect-[994/663] lg:aspect-[517/402] object-cover object-center w-full lg:w-[517px]"
@@ -100,7 +100,7 @@ const KeyValueSection = () => {
           We turn insights into communications that influence customers
           behavior.
         </KeyWithPoint>
-      </div>
+      </div> */}
     </div>
   );
 };

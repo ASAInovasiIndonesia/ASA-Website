@@ -88,11 +88,11 @@ const Testimonial = () => {
               )
           )}
         </div>
-        <div className="lg:col-span-3 -mx-6 lg:mx-0 order-2">
+        <div className="lg:col-span-3 -mx-6 lg:mx-0 order-2 flex h-full items-center">
           <Image
-            src="/static/stock_image2.png"
-            width={711.11}
-            height={400}
+            src="/static/stock_image2a.png"
+            width={712}
+            height={362}
             unoptimized
             className="w-full"
             alt="stock Image"
