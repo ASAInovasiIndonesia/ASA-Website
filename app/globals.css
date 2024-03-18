@@ -78,7 +78,7 @@
 }
 
 .rc-slider-mark-text {
-  @apply first:!translate-x-[0] first:-ml-1 last:!translate-x-[-100%] last:ml-2 last:w-16;
+  @apply first:!translate-x-[0] first:-ml-1 last:!translate-x-[-100%] last:sm:ml-2 w-5 sm:w-auto last:sm:w-16;
 }
 
 .rc-slider-rail {

@@ -38,6 +38,7 @@ const SlideSection = ({
   onNext,
   showBack = true,
   nextText = "Next",
+  nextDisabled = false,
   nextLoading = false,
 }: {
   children: React.ReactNode;
@@ -47,19 +48,23 @@ const SlideSection = ({
   onNext: () => void;
   showBack?: boolean;
   nextText?: string;
+  nextDisabled?: boolean;
   nextLoading?: boolean;
 }) => {
   return (
-    <div className="!bg-white py-[75px] px-[100px] flex flex-col h-full">
+    <div className="!bg-white py-[24px] sm:py-[48px] lg:py-[75px] px-8 lg:px-[100px] flex flex-col h-full">
       <div className="flex-1">
-        <h2 className="text-black text-2xl font-semibold">{title}</h2>
-        <p className="text-gray-500 font-medium text-xl mt-2">{desc}</p>
+        <h2 className="text-black text-xl md:text-2xl font-semibold">
+          {title}
+        </h2>
+        <p className="text-gray-500 font-medium text-lg md:text-xl mt-2 mb-6 md:mb-8">
+          {desc}
+        </p>
         {children}
       </div>
       <div className="flex justify-between items-center">
         {showBack ? (
           <Button
-            size="lg"
             radius="lg"
             variant="light"
             className="font-medium text-sm px-0 text-orange"
@@ -72,11 +77,11 @@ const SlideSection = ({
           <div>&nbsp;</div>
         )}
         <Button
-          size="lg"
           radius="lg"
           className="font-medium text-sm px-6 bg-black text-white"
           endContent={<ArrowNext />}
           onClick={onNext}
+          isDisabled={nextDisabled}
           isLoading={nextLoading}
         >
           {nextText}
@@ -112,6 +117,10 @@ const FormSubmission = () => {
       [selectedKey]: !val,
     });
   };
+
+  function hasAtLeastOneTrueValue(): boolean {
+    return Object.values(serviceOptions).some((value) => value === true);
+  }
 
   const onPhoneChange = (e: any, onChange: (e: any) => void) => {
     const re = /^[0-9\b]+$/;
@@ -177,7 +186,7 @@ const FormSubmission = () => {
     <>
       <div className="bg-[url('/static/stock_image5.png')] bg-cover bg-center bg-no-repeat">
         <div className="bg-black/80 text-white w-full h-full">
-          <div className="max-w-[1024px] ml-auto">
+          <div className="max-w-[1024px] xl:max-w-[70%] ml-auto">
             <div className="max-w-4xl px-6 xl:px-0 py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-0">
                 <h3 className="text-[40px] font-extralight lg:text-left pr-6">
@@ -190,7 +199,7 @@ const FormSubmission = () => {
                 </p>
               </div>
             </div>
-            <div className="h-[525px] overflow-hidden relative">
+            <div className="h-[600px] md:h-[525px] overflow-hidden relative pl-6 xl:pl-0">
               <Swiper
                 slidesPerView={1.3}
                 spaceBetween={30}
@@ -200,15 +209,24 @@ const FormSubmission = () => {
                 onInit={(ev) => {
                   set_my_swiper(ev);
                 }}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 1,
+                  },
+                  768: {
+                    slidesPerView: 1.3,
+                  },
+                }}
               >
                 <SwiperSlide>
                   <SlideSection
                     title="Tell us what you’re dreaming of, and let’s make it happen"
                     desc="What service are you seeking assistance with today?"
                     showBack={false}
+                    nextDisabled={!hasAtLeastOneTrueValue()}
                     onNext={() => my_swiper.slideNext()}
                   >
-                    <div className="flex gap-x-4 gap-y-6 mt-8 flex-wrap">
+                    <div className="flex gap-x-4 gap-y-4 md:gap-y-6 flex-wrap">
                       {Object.entries(serviceOptions).map(([key, value]) => (
                         <Button
                           key={key}
@@ -216,7 +234,6 @@ const FormSubmission = () => {
                           className={cn("font-medium text-sm px-6 border", {
                             "bg-black text-white": value,
                           })}
-                          size="lg"
                           radius="lg"
                           onClick={() => handleServiceSelect(key, value)}
                         >
@@ -234,7 +251,7 @@ const FormSubmission = () => {
                     onNext={() => my_swiper.slideNext()}
                     onBack={() => my_swiper.slidePrev()}
                   >
-                    <div className="mt-8">
+                    <div className="-mx-1 sm:mx-0">
                       <Slider
                         marks={marks}
                         step={null}
@@ -253,7 +270,7 @@ const FormSubmission = () => {
                     onNext={() => my_swiper.slideNext()}
                     onBack={() => my_swiper.slidePrev()}
                   >
-                    <div className="mt-8">
+                    <div className="">
                       <Textarea
                         placeholder="Share your project details"
                         minRows={4}
@@ -277,7 +294,7 @@ const FormSubmission = () => {
                     nextLoading={isLoading}
                     nextText="Submit"
                   >
-                    <form className="mt-8 grid grid-cols-2 gap-4">
+                    <form className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 -mt-3 sm:mt-0 overflow-y-auto">
                       <Controller
                         control={control}
                         name="Name"
@@ -291,7 +308,12 @@ const FormSubmission = () => {
                             placeholder="Type your name"
                             variant="bordered"
                             radius="sm"
-                            classNames={{ innerWrapper: "text-black" }}
+                            classNames={{
+                              innerWrapper: "text-black",
+                              label: "text-xs sm:text-sm",
+                              errorMessage: "text-[10px] sm:text-xs",
+                              helperWrapper: "py-0 sm:py-1",
+                            }}
                             labelPlacement="outside"
                             value={value}
                             onChange={onChange}
@@ -305,17 +327,29 @@ const FormSubmission = () => {
                       <Controller
                         control={control}
                         name="Company"
+                        rules={{
+                          required: true,
+                          pattern: /^(?!\s+$)./,
+                        }}
                         render={({ field: { onChange, value } }) => (
                           <Input
                             label="Company or Role"
                             placeholder="Type your company name"
                             variant="bordered"
                             radius="sm"
-                            classNames={{ innerWrapper: "text-black" }}
+                            classNames={{
+                              innerWrapper: "text-black",
+                              label: "text-xs sm:text-sm",
+                              errorMessage: "text-[10px] sm:text-xs",
+                              helperWrapper: "py-0 sm:py-1",
+                            }}
                             labelPlacement="outside"
                             value={value}
                             onChange={onChange}
-                            errorMessage={errors.Company && "required"}
+                            errorMessage={
+                              errors.Company &&
+                              "Please enter a valid company / role"
+                            }
                             isInvalid={!!errors.Company}
                           />
                         )}
@@ -334,7 +368,12 @@ const FormSubmission = () => {
                             variant="bordered"
                             radius="sm"
                             pattern="^[0-9\b]+$"
-                            classNames={{ innerWrapper: "text-black" }}
+                            classNames={{
+                              innerWrapper: "text-black",
+                              label: "text-xs sm:text-sm",
+                              errorMessage: "text-[10px] sm:text-xs",
+                              helperWrapper: "py-0 sm:py-1",
+                            }}
                             labelPlacement="outside"
                             value={value}
                             onChange={onChange}
@@ -359,7 +398,12 @@ const FormSubmission = () => {
                             variant="bordered"
                             radius="sm"
                             type="tel"
-                            classNames={{ innerWrapper: "text-black" }}
+                            classNames={{
+                              innerWrapper: "text-black",
+                              label: "text-xs sm:text-sm",
+                              errorMessage: "text-[10px] sm:text-xs",
+                              helperWrapper: "py-0 sm:py-1",
+                            }}
                             labelPlacement="outside"
                             value={value}
                             onChange={(e) => onPhoneChange(e, onChange)}
