@@ -21,7 +21,79 @@ type FormValues = {
   Phone: string;
 };
 
+const marks = {
+  0: "Not Sure",
+  20: "100 Million",
+  40: "250 Million",
+  60: "500 Million",
+  80: "1 Billion",
+  100: "> 1 Billion",
+};
+
+const SlideSection = ({
+  children,
+  title,
+  desc,
+  onBack,
+  onNext,
+  showBack = true,
+  nextText = "Next",
+  nextLoading = false,
+}: {
+  children: React.ReactNode;
+  title: string;
+  desc: string;
+  onBack?: () => void;
+  onNext: () => void;
+  showBack?: boolean;
+  nextText?: string;
+  nextLoading?: boolean;
+}) => {
+  return (
+    <div className="!bg-white py-[75px] px-[100px] flex flex-col h-full">
+      <div className="flex-1">
+        <h2 className="text-black text-2xl font-semibold">{title}</h2>
+        <p className="text-gray-500 font-medium text-xl mt-2">{desc}</p>
+        {children}
+      </div>
+      <div className="flex justify-between items-center">
+        {showBack ? (
+          <Button
+            size="lg"
+            radius="lg"
+            variant="light"
+            className="font-medium text-sm px-0 text-orange"
+            startContent={<ArrowBack />}
+            onClick={onBack}
+          >
+            Back
+          </Button>
+        ) : (
+          <div>&nbsp;</div>
+        )}
+        <Button
+          size="lg"
+          radius="lg"
+          className="font-medium text-sm px-6 bg-black text-white"
+          endContent={<ArrowNext />}
+          onClick={onNext}
+          isLoading={nextLoading}
+        >
+          {nextText}
+        </Button>
+      </div>
+    </div>
+  );
+};
+
 const FormSubmission = () => {
+  const {
+    control,
+    getValues,
+    trigger,
+    formState: { errors, isValid },
+  } = useForm<FormValues>({ mode: "onChange" });
+
   const [my_swiper, set_my_swiper] = useState<SwiperCore | {}>({});
   const [index, setIndex] = useState(0);
   const [serviceOptions, setServiceOptions] = useState({
@@ -30,6 +102,7 @@ const FormSubmission = () => {
     "Change Behaviour": false,
     "Improving Customer Experiences": false,
   });
+  const [budget, setBudget] = useState<any>(20);
   const [projectDetails, setProjectDetails] = useState("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -39,22 +112,6 @@ const FormSubmission = () => {
       [selectedKey]: !val,
     });
   };
-
-  const [budget, setBudget] = useState<any>(20);
-  const marks = {
-    0: "Not Sure",
-    20: "100 Million",
-    40: "250 Million",
-    60: "500 Million",
-    80: "1 Billion",
-    100: "> 1 Billion",
-  };
-
-  const {
-    control,
-    getValues,
-    formState: { errors, isValid },
-  } = useForm<FormValues>({ mode: "onChange" });
 
   const onPhoneChange = (e: any, onChange: (e: any) => void) => {
     const re = /^[0-9\b]+$/;
@@ -84,6 +141,10 @@ const FormSubmission = () => {
   }
 
   const submitForm = () => {
+    trigger();
+    if (!isValid) {
+      return;
+    }
     setIsLoading(true);
     const { Name, Email, Phone, Company } = getValues();
 
@@ -116,10 +177,10 @@ const FormSubmission = () => {
     <>
       <div className="bg-[url('/static/stock_image5.png')] bg-cover bg-center bg-no-repeat">
         <div className="bg-black/80 text-white w-full h-full">
-          <div className="max-w-[70%] ml-auto">
-            <div className="max-w-5xl px-6 xl:px-4 py-24">
+          <div className="max-w-[1024px] ml-auto">
+            <div className="max-w-4xl px-6 xl:px-0 py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-0">
-                <h3 className="text-[40px] font-extralight lg:text-right pr-6">
+                <h3 className="text-[40px] font-extralight lg:text-left pr-6">
                   Let Us Know Your Goals
                 </h3>
                 <p className="border-l border-white pl-6 font-grotesque text-2xl leading-8">
@@ -131,7 +192,7 @@ const FormSubmission = () => {
             </div>
             <div className="h-[525px] overflow-hidden relative">
               <Swiper
-                slidesPerView={1.5}
+                slidesPerView={1.3}
                 spaceBetween={30}
                 className="mySwiper"
                 onActiveIndexChange={(e) => setIndex(e.activeIndex)}
@@ -140,14 +201,13 @@ const FormSubmission = () => {
                   set_my_swiper(ev);
                 }}
               >
-                <SwiperSlide className="!bg-white py-[80px] px-[100px]">
-                  <div className="w-full h-full relative">
-                    <h2 className="text-black text-2xl font-semibold">
-                      Tell us what you’re dreaming of, and let’s make it happen
-                    </h2>
-                    <p className="text-gray-500 font-medium text-xl mt-2">
-                      What service are you seeking assistance with today?
-                    </p>
+                <SwiperSlide>
+                  <SlideSection
+                    title="Tell us what you’re dreaming of, and let’s make it happen"
+                    desc="What service are you seeking assistance with today?"
+                    showBack={false}
+                    onNext={() => my_swiper.slideNext()}
+                  >
                     <div className="flex gap-x-4 gap-y-6 mt-8 flex-wrap">
                       {Object.entries(serviceOptions).map(([key, value]) => (
                         <Button
@@ -164,29 +224,16 @@ const FormSubmission = () => {
                         </Button>
                       ))}
                     </div>
-                    <div className="absolute w-full bottom-0 flex justify-between">
-                      <div>&nbsp;</div>
-                      <Button
-                        size="lg"
-                        radius="lg"
-                        className="font-medium text-sm px-6 bg-black text-white"
-                        endContent={<ArrowNext />}
-                        onClick={() => my_swiper.slideNext()}
-                      >
-                        Next
-                      </Button>
-                    </div>
-                  </div>
+                  </SlideSection>
                 </SwiperSlide>
-                <SwiperSlide className="!bg-white py-[80px] px-[100px]">
-                  <div className="w-full h-full relative">
-                    <h2 className="text-black text-2xl font-semibold">
-                      What’s your budget for this transformative journey?
-                    </h2>
-                    <p className="text-gray-500 font-medium text-xl mt-2">
-                      Help us understand, and we'll craft a plan that align with
-                      your budget.
-                    </p>
+                <SwiperSlide>
+                  <SlideSection
+                    title="What’s your budget for this transformative journey?"
+                    desc="Help us understand, and we'll craft a plan that align with
+                      your budget."
+                    onNext={() => my_swiper.slideNext()}
+                    onBack={() => my_swiper.slidePrev()}
+                  >
                     <div className="mt-8">
                       <Slider
                         marks={marks}
@@ -196,38 +243,16 @@ const FormSubmission = () => {
                         dotStyle={{ color: "black" }}
                       />
                     </div>
-                    <div className="absolute w-full bottom-0 flex justify-between">
-                      <Button
-                        size="lg"
-                        radius="lg"
-                        variant="light"
-                        className="font-medium text-sm px-0 text-orange"
-                        startContent={<ArrowBack />}
-                        onClick={() => my_swiper.slidePrev()}
-                      >
-                        Back
-                      </Button>
-                      <Button
-                        size="lg"
-                        radius="lg"
-                        className="font-medium text-sm px-6 bg-black text-white"
-                        endContent={<ArrowNext />}
-                        onClick={() => my_swiper.slideNext()}
-                      >
-                        Next
-                      </Button>
-                    </div>
-                  </div>
+                  </SlideSection>
                 </SwiperSlide>
-                <SwiperSlide className="!bg-white py-[80px] px-[100px]">
-                  <div className="w-full h-full relative">
-                    <h2 className="text-black text-2xl font-semibold">
-                      Is there any additional information you'd like to share?
-                    </h2>
-                    <p className="text-gray-500 font-medium text-xl mt-2">
-                      Help us understand, and we'll craft a plan that align with
-                      your budget.
-                    </p>
+                <SwiperSlide>
+                  <SlideSection
+                    title="Is there any additional information you'd like to share?"
+                    desc="Help us understand, and we'll craft a plan that align with
+                    your budget."
+                    onNext={() => my_swiper.slideNext()}
+                    onBack={() => my_swiper.slidePrev()}
+                  >
                     <div className="mt-8">
                       <Textarea
                         placeholder="Share your project details"
@@ -240,38 +265,18 @@ const FormSubmission = () => {
                         onValueChange={setProjectDetails}
                       />
                     </div>
-                    <div className="absolute w-full bottom-0 flex justify-between">
-                      <Button
-                        size="lg"
-                        radius="lg"
-                        variant="light"
-                        className="font-medium text-sm px-0 text-orange"
-                        startContent={<ArrowBack />}
-                        onClick={() => my_swiper.slidePrev()}
-                      >
-                        Back
-                      </Button>
-                      <Button
-                        size="lg"
-                        radius="lg"
-                        className="font-medium text-sm px-6 bg-black text-white"
-                        endContent={<ArrowNext />}
-                        onClick={() => my_swiper.slideNext()}
-                      >
-                        Next
-                      </Button>
-                    </div>
-                  </div>
+                  </SlideSection>
                 </SwiperSlide>
-                <SwiperSlide className="!bg-white py-[80px] px-[100px]">
-                  <div className="w-full h-full relative">
-                    <h2 className="text-black text-2xl font-semibold">
-                      To ensure we provide the best support, may we have your
-                      contact info?
-                    </h2>
-                    <p className="text-gray-500 font-medium text-xl mt-2">
-                      Your journey towards success begins now!
-                    </p>
+                <SwiperSlide>
+                  <SlideSection
+                    title="To ensure we provide the best support, may we have your
+                    contact info?"
+                    desc="Your journey towards success begins now!"
+                    onNext={() => submitForm()}
+                    onBack={() => my_swiper.slidePrev()}
+                    nextLoading={isLoading}
+                    nextText="Submit"
+                  >
                     <form className="mt-8 grid grid-cols-2 gap-4">
                       <Controller
                         control={control}
@@ -302,7 +307,7 @@ const FormSubmission = () => {
                         name="Company"
                         render={({ field: { onChange, value } }) => (
                           <Input
-                            label="Role or Company"
+                            label="Company or Role"
                             placeholder="Type your company name"
                             variant="bordered"
                             radius="sm"
@@ -367,30 +372,7 @@ const FormSubmission = () => {
                         )}
                       />
                     </form>
-                    <div className="absolute w-full bottom-0 flex justify-between">
-                      <Button
-                        size="lg"
-                        radius="lg"
-                        variant="light"
-                        className="font-medium text-sm px-0 text-orange"
-                        startContent={<ArrowBack />}
-                        onClick={() => my_swiper.slidePrev()}
-                      >
-                        Back
-                      </Button>
-                      <Button
-                        size="lg"
-                        radius="lg"
-                        className="font-medium text-sm px-6 bg-black text-white"
-                        endContent={<ArrowNext />}
-                        onClick={submitForm}
-                        isLoading={isLoading}
-                        isDisabled={!isValid}
-                      >
-                        Submit
-                      </Button>
-                    </div>
-                  </div>
+                  </SlideSection>
                 </SwiperSlide>
                 <SwiperSlide />
               </Swiper>
