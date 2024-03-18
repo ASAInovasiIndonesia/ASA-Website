@@ -61,3 +61,42 @@
   font-size: clamp(60px, 8vw, 120px);
   line-height: clamp(60px, 8vw, 120px);
 }
+
+.swiper-slide {
+}
+
+.swiper {
+  @apply h-full;
+}
+
+.rc-slider {
+  @apply !h-6;
+}
+
+.rc-slider-mark {
+  @apply font-semibold mt-1;
+}
+
+.rc-slider-mark-text {
+  @apply first:!translate-x-[0] first:-ml-1 last:!translate-x-[-100%] last:ml-2 last:w-16;
+}
+
+.rc-slider-rail {
+  @apply !h-2;
+}
+
+.rc-slider-dot {
+  @apply !h-3 !w-3 !translate-y-[35%] !translate-x-[-50%];
+}
+
+.rc-slider-track {
+  @apply !h-2 !bg-orange;
+}
+
+.rc-slider-handle {
+  @apply !h-6 !w-6 !opacity-100 !border-orange active:!shadow-none !translate-y-[-15%] !translate-x-[-50%];
+}
+
+.rc-slider-dot-active {
+  @apply !border-orange;
+}

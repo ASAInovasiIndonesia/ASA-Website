@@ -1,6 +1,7 @@
 import ApproachSection from "@/components/ApproachSection";
 import CallToActionV2 from "@/components/CallToActionV2";
 import Footer from "@/components/Footer";
+import FormSubmission from "@/components/FormSubmission";
 import HeroV2 from "@/components/HeroV2";
 // import InsightSection from "@/components/InsightSection";
 import KeyValueSection from "@/components/KeyValueSection";
@@ -19,7 +20,8 @@ const HomePage = () => {
       <ApproachSection />
       <OurClients />
       {/* <InsightSection /> */}
-      <CallToActionV2 />
+      {/* <CallToActionV2 /> */}
+      <FormSubmission />
       <Footer />
     </>
   );
