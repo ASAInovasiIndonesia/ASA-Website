@@ -21,13 +21,26 @@ type FormValues = {
   Phone: string;
 };
 
+const initialFormState = {
+  Name: "",
+  Company: "",
+  Email: "",
+  Phone: "",
+};
+
+const initialServiceState = {
+  "Increase Sales": false,
+  "Optimizing Cost": false,
+  "Change Behaviour": false,
+  "Improving Customer Experiences": false,
+  Others: false,
+};
+
 const marks = {
   0: "Not Sure",
-  20: "100 Million",
-  40: "250 Million",
-  60: "500 Million",
-  80: "1 Billion",
-  100: "> 1 Billion",
+  33: "100 Million",
+  66: "500 Million",
+  100: "1 Billion or more",
 };
 
 const SlideSection = ({
@@ -97,17 +110,13 @@ const FormSubmission = () => {
     getValues,
     trigger,
     formState: { errors, isValid },
+    reset,
   } = useForm<FormValues>({ mode: "onChange" });
 
   const [my_swiper, set_my_swiper] = useState<SwiperCore | {}>({});
   const [index, setIndex] = useState(0);
-  const [serviceOptions, setServiceOptions] = useState({
-    "Increase Sales": false,
-    "Optimizing Cost": false,
-    "Change Behaviour": false,
-    "Improving Customer Experiences": false,
-  });
-  const [budget, setBudget] = useState<any>(20);
+  const [serviceOptions, setServiceOptions] = useState(initialServiceState);
+  const [budget, setBudget] = useState<any>(33);
   const [projectDetails, setProjectDetails] = useState("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -178,8 +187,19 @@ const FormSubmission = () => {
       }),
     })
       .then((response) => response.json())
-      .then((data) => alert("Thank you!\nYour information has been received."))
+      .then((data) => {
+        alert("Thank you!\nYour information has been received.");
+        resetForm();
+      })
       .finally(() => setIsLoading(false));
+  };
+
+  const resetForm = () => {
+    reset(initialFormState);
+    setServiceOptions(initialServiceState);
+    setBudget(33);
+    setProjectDetails("");
+    my_swiper.slideTo(0);
   };
 
   return (
@@ -255,8 +275,10 @@ const FormSubmission = () => {
                       <Slider
                         marks={marks}
                         step={null}
-                        defaultValue={20}
-                        onChangeComplete={(v) => setBudget(v)}
+                        defaultValue={33}
+                        value={budget}
+                        onChange={setBudget}
+                        // onChangeComplete={(v) => setBudget(v)}
                         dotStyle={{ color: "black" }}
                       />
                     </div>
@@ -333,7 +355,7 @@ const FormSubmission = () => {
                         }}
                         render={({ field: { onChange, value } }) => (
                           <Input
-                            label="Company or Role"
+                            label="Company"
                             placeholder="Type your company name"
                             variant="bordered"
                             radius="sm"
@@ -347,8 +369,7 @@ const FormSubmission = () => {
                             value={value}
                             onChange={onChange}
                             errorMessage={
-                              errors.Company &&
-                              "Please enter a valid company / role"
+                              errors.Company && "Please enter a valid company"
                             }
                             isInvalid={!!errors.Company}
                           />
